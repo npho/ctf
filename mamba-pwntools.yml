@@ -1,0 +1,15 @@
+name: pwntools
+channels:
+  - conda-forge
+dependencies:
+  - python >=3.9
+  - ipython
+  - pwntools
+  - ROPgadget
+  - r2pipe
+  # https://github.com/sashs/Ropper
+  - capstone
+  - pip:
+    - filebytes
+    - keystone-engine
+    - ropper
