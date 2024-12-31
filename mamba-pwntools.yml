@@ -6,7 +6,8 @@ dependencies:
   - ipython
   - pwntools
   - ROPgadget
-  - r2pipe
+  - pip:
+    - r2pipe
   # https://github.com/sashs/Ropper
   - capstone
   - pip:
