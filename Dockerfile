@@ -43,5 +43,6 @@ RUN micromamba clean --all --yes
 
 COPY motd /etc/update-motd.d/motd
 COPY zsh-rc /home/ubuntu/.zshrc
+RUN chown -R ubuntu:ubuntu /home/ubuntu/.zshrc
 
 CMD ["/bin/zsh"]
