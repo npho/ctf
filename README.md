@@ -4,11 +4,14 @@ Repo for messing around with capture the flag (CTF) challenges.
 
 ### Toolkit Container
 
-1. Set up Lima for Docker (x86) on MacOS.
+1. Set up Lima (`brew install lima`) for Docker (x86) on MacOS.
 
     ```shell
-    brew install lima
-    limactl create --name=default --arch=x86_64 template://docker
+    limactl create \
+      --name=default \
+      --arch=x86_64 \
+      --mount-type=reverse-sshfs \
+      template://docker
     ```
     
 2. Build an x86 Docker image on MacOS using Lima.
