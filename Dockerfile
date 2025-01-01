@@ -22,6 +22,9 @@ RUN apt-get install -y \
 RUN usermod -s /bin/zsh root
 RUN usermod -s /bin/zsh ubuntu
 
+COPY zsh-rc /home/ubuntu/.zshrc
+RUN chown -R ubuntu:ubuntu /home/ubuntu/.zshrc
+
 # install micromamba
 ENV MAMBA_ROOT_PREFIX=/opt/mamba/
 RUN mkdir -p ${MAMBA_ROOT_PREFIX}
@@ -42,7 +45,5 @@ RUN micromamba create -y -f /tmp/mamba-pwntools.yml
 RUN micromamba clean --all --yes
 
 COPY motd /etc/update-motd.d/motd
-COPY zsh-rc /home/ubuntu/.zshrc
-RUN chown -R ubuntu:ubuntu /home/ubuntu/.zshrc
 
 CMD ["/bin/zsh"]
