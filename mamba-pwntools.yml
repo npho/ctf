@@ -6,6 +6,9 @@ dependencies:
   - ipython
   - pwntools
   - ROPgadget
+  # https://github.com/quarkslab/qbindiff/
+  - pip:
+    - qbindiff 
   - pip:
     - r2pipe
   # https://github.com/sashs/Ropper
